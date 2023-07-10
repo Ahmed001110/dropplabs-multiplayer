@@ -24,6 +24,8 @@ const closeBtn = document.querySelectorAll(".intro_close_btn"),
   signin_desktopBtn = document.querySelector(".signin_desktop"),
   introAction = localStorage.getItem("intro") === "true";
 const screenBtnEle = document.getElementById("screen-btn");
+const controls_btn = document.getElementById("controls-btn");
+
 const signup1 = document.querySelector(".signup1");
 const signin1 = document.querySelector(".signin1");
 const signup1_desktop = document.querySelector(".signup1_desktop");
@@ -47,6 +49,7 @@ function introResize() {
   } else {
     intro.style.visibility = "hidden";
     screenBtnEle.style.display = "none";
+    controls_btn.style.display = "none";
     menuBtn.style.display = "none";
     hideIntro();
   }
@@ -70,10 +73,7 @@ continuesigninmobileBtn.addEventListener("click", function () {
   menubar.style.opacity = "1";
   hideIntro();
 });
-continuesignupmobileBtn.addEventListener("click", function () {
-  introMobileWrapper.classList.remove("step-4");
-  introMobileWrapper.classList.add("step-5");
-});
+
 menuBtn.addEventListener("click", showIntro);
 
 continueDesktopBtn.addEventListener("click", function () {
@@ -105,21 +105,37 @@ signin_desktopBtn.addEventListener("click", function () {
   introDesktopWrapper.classList.remove("step-2");
   introDesktopWrapper.classList.add("step-3");
 });
-signup1.addEventListener("click", function () {
-  signupBtn.style.backgroundColor = "#fff";
-  signupBtn.style.color = "#202020";
-  signinBtn.style.backgroundColor = "#ffffff00";
-  signinBtn.style.color = "#fff";
-  introMobileWrapper.classList.remove("step-5");
-  introMobileWrapper.classList.add("step-4");
-});
+// signup1.addEventListener("click", function () {
+//   signupBtn.style.backgroundColor = "#fff";
+//   signupBtn.style.color = "#202020";
+//   signinBtn.style.backgroundColor = "#ffffff00";
+//   signinBtn.style.color = "#fff";
+//   introMobileWrapper.classList.remove("step-5");
+//   introMobileWrapper.classList.add("step-4");
+// });
 signinBtn.addEventListener("click", function () {
   signin1.style.backgroundColor = "#fff";
   signin1.style.color = "#202020";
   signup1.style.backgroundColor = "#ffffff00";
   signup1.style.color = "#fff";
-  introMobileWrapper.classList.remove("step-4");
-  introMobileWrapper.classList.add("step-5");
+  const temp1 = document.getElementById("signin");
+  temp1.style.opacity = "1";
+  temp1.style.display = "block";
+  const temp2 = document.getElementById("signup");
+  temp2.style.opacity = "0";
+  temp2.style.display = "none";
+});
+signup1.addEventListener("click", function () {
+  signupBtn.style.backgroundColor = "#fff";
+  signupBtn.style.color = "#202020";
+  signinBtn.style.backgroundColor = "#ffffff00";
+  signinBtn.style.color = "#fff";
+  const temp1 = document.getElementById("signin");
+  temp1.style.opacity = "0";
+  temp1.style.display = "none";
+  const temp2 = document.getElementById("signup");
+  temp2.style.opacity = "1";
+  temp2.style.display = "block";
 });
 document.addEventListener("click", function (e) {
   if (window.innerWidth < 768 && e.target != continueMobileBtn) {

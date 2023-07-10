@@ -1,11 +1,10 @@
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 
 @media (min-width: 320px) and (max-width: 400px) {
-  .abc1 {
-    position: relative;
-    bottom: 5px;
-    top: 120px !important;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3%;
+  } */
   .abc2 {
     width: 300px !important;
   }
@@ -47,11 +46,10 @@ top: 33px !important;
 }
 
 @media (min-width: 400px) and (max-width: 1100px) {
-  .abc1 {
-    position: relative;
-    bottom: 5px;
-    top: 120px;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3%;
+  } */
   .abc2 {
     width: 200px;
   }
@@ -64,43 +62,43 @@ top: 33px !important;
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
-  .abc1 {
-    position: relative !important;
-    bottom: 5px !important;
-    top: 300px !important;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3% !important; */
+  /* top: 235px !important; */
+  /* } */
   .abc2 {
     width: 300px !important;
   }
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 740px) and (-webkit-device-pixel-ratio: 2) {
-  .abc1 {
-    position: relative !important;
-    bottom: 5px !important;
-    top: 300px;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3% !important;
+    top: 235px;
+  } */
   .abc2 {
     width: 350px;
   }
 }
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
-  .abc1 {
+  /* .abc1 {
     position: relative !important;
-    bottom: 5px !important;
-    top: 100px !important ;
-  }
+    bottom: 3% !important; */
+  /* top: 235px !important ; */
+  /* } */
   .abc2 {
     width: 300px !important;
   }
 }
 
 @media only screen and (min-device-width: 412px) and (max-device-height: 914px) and (-webkit-device-pixel-ratio: 2) {
-  .abc1 {
-    position: relative !important;
-    bottom: 5px !important;
-    top: 370px !important;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3% !important; */
+  /* top: 235px !important; */
+  /* } */
   .abc2 {
     width: 400px !important;
   }
@@ -111,11 +109,11 @@ top: 33px !important;
 
 /* iphone 12 Pro Max */
 @media only screen and (min-device-width: 390px) and (max-device-height: 884px) and (-webkit-device-pixel-ratio: 3) {
-  .abc1 {
-    position: relative !important;
-    bottom: 5px !important;
-    top: 290px !important;
-  }
+  /* .abc1 {
+    position: absolute;
+    bottom: 3% !important; */
+  /* top: 290px !important; */
+  /* } */
   .abc2 {
     width: 350px !important;
   }
@@ -123,7 +121,7 @@ top: 33px !important;
 
 /* @media (min-width:320px)  {    .abc1 {
       position: relative ;
-      bottom: 5px ;
+      bottom: 3% ;
       top: 290px ;
     }
     .abc2 {
@@ -132,7 +130,7 @@ top: 33px !important;
 @media (min-width:480px)  { 
     .abc1 {
   position: relative ;
-  bottom: 5px ;
+  bottom: 3% ;
   top: 290px ;
 }
 .abc2 {
@@ -140,7 +138,7 @@ top: 33px !important;
 } }
 @media (min-width:600px)  {    .abc1 {
   position: relative ;
-  bottom: 5px ;
+  bottom: 3% ;
   top: 290px ;
 }
 .abc2 {
@@ -152,7 +150,7 @@ top: 33px !important;
 @media (min-width:320px)  {  
    .abc1 {
   position: relative ;
-  bottom: 5px ;
+  bottom: 3% ;
   top: 290px ;
 }
 .abc2 {
@@ -160,7 +158,7 @@ top: 33px !important;
 }  }
 @media (min-width:481px)  {    .abc1 {
   position: relative ;
-  bottom: 5px ;
+  bottom: 3% ;
   top: 290px ;
 }
 .abc2 {
@@ -168,18 +166,27 @@ top: 33px !important;
 }}
 @media (min-width:641px)  {    .abc1 {
   position: relative ;
-  bottom: 5px ;
+  bottom: 3% ;
   top: 290px ;
 }
 .abc2 {
   width: 350px ;
 } } */
+.mini-menu {
+  background-color: rgba(17, 16, 16, 0.773);
+  padding: 10px;
+  border-radius: 50%;
+}
+.abc1 {
+  position: absolute;
+  bottom: 3%;
+}
 .chat1 {
   display: flex;
   justify-content: space-between;
 }
 .abc3 {
-  opacity: 0;
+  opacity: 1;
 }
 .chat-history-grp {
   display: flex;
@@ -228,12 +235,6 @@ top: 33px !important;
   position: relative;
   right: 200px;
 } */
-@media (min-width: 320px) {
-  .abc1 {
-  }
-}
-@media (min-width: 480px) {
-}
 
 .abc6 {
   position: absolute;
@@ -445,6 +446,7 @@ button {
   font-size: 18px;
   padding: 10px 31px;
   border-radius: 30px;
+  width: 200px;
   color: #202020;
   background-color: #fff;
   transition: 0.3s;
@@ -512,7 +514,7 @@ button {
   padding: 10px 10px;
   border-radius: 10px;
   transition: 0.3s;
-  width: 100px;
+  width: 150px;
 }
 .signup {
   background-color: #fff;
@@ -567,7 +569,14 @@ button {
   bottom: 45px;
   z-index: 999;
 }
-
+#signin {
+  opacity: 0;
+  display: none;
+}
+#signup {
+  opacity: 1;
+  display: block;
+}
 .intro.mobile .intro_header {
   padding: 20px 32px 0;
 }
@@ -585,9 +594,7 @@ button {
 .intro_mobile_wrapper.step-4 {
   transform: translateX(-300%);
 }
-.intro_mobile_wrapper.step-5 {
-  transform: translateX(-400%);
-}
+
 .intro_mobile_section {
   width: 100%;
   flex: 100%;
@@ -595,6 +602,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
+  align-items: center;
 }
 .intro_mobile_section:nth-child(2) {
   pointer-events: none;
@@ -1127,13 +1135,13 @@ input {
   cursor: pointer;
 }
 .chat-history::-webkit-scrollbar-track {
-  background: rgba(200, 200, 200, 0.8); /* color of the tracking area */
+  background: rgba(0, 0, 0, 0.2); /* color of the tracking area */
   cursor: pointer;
 }
 .chat-history::-webkit-scrollbar-thumb {
-  background-color: rgba(177, 177, 177, 0.4); /* color of the scroll thumb */
+  background-color: rgba(0, 0, 0, 0.8); /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid rgba(177, 177, 177, 0.4); /* creates padding around scroll thumb */
+  border: 3px solid rgba(0, 0, 0, 0.4); /* creates padding around scroll thumb */
   cursor: pointer;
 }
 
@@ -1141,9 +1149,8 @@ input {
   height: 290px;
   padding: 8px 24px;
   overflow-y: auto;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* flex-direction: column-reverse; */
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .chat-message {
