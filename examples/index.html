@@ -311,6 +311,7 @@
               chatHistoryGrp.appendChild(chatHistoryUser);
               chatHistoryGrp.appendChild(chatHistoryParent);
 
+              //chatHistory.insertBefore(chatHistoryGrp, chatHistory.children[0]);
               chatHistory.appendChild(chatHistoryGrp);
 
               // Broadcast data
@@ -657,7 +658,7 @@
                   >
                     <img
                       src="assets/img/user2.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -687,6 +688,7 @@
                   type="text"
                   id="username-overlay"
                   class="group-child18 user"
+                  style="border-radius: 30px"
                   placeholder="Name"
                   oninput="document.getElementById('player').setAttribute('player-info', 'name', this.value)"
                 />
@@ -721,7 +723,7 @@
                   >
                     <img
                       src="assets/img/user2.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -765,7 +767,7 @@
                   >
                     <img
                       src="assets/img/user1.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -799,7 +801,7 @@
                 >
                   <img
                     src="assets/img/user1.svg"
-                    class=""
+                    class="minorusericon"
                     width="24px"
                     alt=""
                   />
@@ -879,7 +881,7 @@
                   >
                     <img
                       src="assets/img/user2.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -943,7 +945,7 @@
                   >
                     <img
                       src="assets/img/user2.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -987,7 +989,7 @@
                   >
                     <img
                       src="assets/img/user1.svg"
-                      class=""
+                      class="minorusericon"
                       width="24px"
                       alt=""
                     />
@@ -1021,7 +1023,7 @@
                 >
                   <img
                     src="assets/img/user1.svg"
-                    class=""
+                    class="minorusericon"
                     width="24px"
                     alt=""
                   />
@@ -1720,15 +1722,15 @@ physicallyCorrectLights : true;
           $(".abcd8").slideToggle();
           // $('.abcd7').css("background-color","green");
         });
-        $(".usericon").click(function () {
-          $(".user-group").slideToggle();
-        });
-        $(".cameraicon").click(function () {
-          $(".cam-group").slideToggle();
-        });
-        $(".settingicon").click(function () {
-          $(".intro.desktop").slideToggle();
-        });
+        // $(".usericon").click(function () {
+        //   $(".user-group").slideToggle();
+        // });
+        // $(".cameraicon").click(function () {
+        //   $(".cam-group").slideToggle();
+        // });
+        // $(".settingicon").click(function () {
+        //   $(".intro.desktop").slideToggle();
+        // });
       });
 
       const usericon = document.querySelector(".usericon");
@@ -1811,6 +1813,8 @@ physicallyCorrectLights : true;
           if (window.innerWidth > 768) {
             console.log("<<<1");
             introMobile.style.visibility = "hidden";
+            const temp1 = document.querySelector(".continue_desktop_btn");
+            temp1.style.visibility = "hidden";
             introDesktopWrapper.classList.remove("step-3");
             introDesktopWrapper.classList.add("step-1");
             showIntro();
@@ -1819,6 +1823,8 @@ physicallyCorrectLights : true;
             intro.style.visibility = "hidden";
             screenBtnEle.style.display = "none";
             menuBtn.style.display = "none";
+            const temp2 = document.querySelector(".continue_btn");
+            temp2.style.visibility = "hidden";
             introMobileWrapper.classList.remove("step-5");
             introMobileWrapper.classList.add("step-1");
             showIntro();
@@ -1828,6 +1834,10 @@ physicallyCorrectLights : true;
           // Second click on the checkbox
           settingicon.style.background = "rgba(0,0,0,0)";
           isChecked6 = false;
+          const temp1 = document.querySelector(".continue_desktop_btn");
+          temp1.style.visibility = "show";
+          const temp2 = document.querySelector(".continue_btn");
+          temp2.style.visibility = "show";
         }
       });
     </script>

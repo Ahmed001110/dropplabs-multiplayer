@@ -186,16 +186,17 @@ top: 33px !important;
   color: black;
 }
 .chat-history-user {
-  position: absolute;
+  /* position: absolute; */
   padding: 5px;
   width: 24px;
+  height: 24px;
   border-radius: 10px;
   background-color: #ffb21d;
   backdrop-filter: blur(5px);
 }
 .chat-history-user1 {
   right: 0;
-  position: absolute;
+  /* position: absolute; */
   padding: 5px;
   width: 24px;
   border-radius: 10px;
@@ -269,7 +270,9 @@ top: 33px !important;
 body {
   box-sizing: border-box;
 }
-
+.minorusericon {
+  filter: brightness(1) invert();
+}
 #menu-btn {
   bottom: 3%;
   left: 95%;
@@ -331,7 +334,9 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
-
+.welcome {
+  display: none;
+}
 .intro {
   position: absolute;
   top: 0;
@@ -1066,7 +1071,9 @@ input {
 #live-chat form {
   margin: 24px;
 }
-
+input {
+  padding-left: 20px;
+}
 #live-chat input[type="text"] {
   /* border: 1px solid #ccc; */
   border-radius: 20px;
@@ -1134,9 +1141,9 @@ input {
   height: 290px;
   padding: 8px 24px;
   overflow-y: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column-reverse;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column-reverse; */
 }
 
 .chat-message {
@@ -1214,7 +1221,7 @@ input {
 .group-child18 {
   left: 0;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
@@ -1253,41 +1260,41 @@ input {
 .user::-webkit-input-placeholder {
   background-image: url("../assets/img/user.svg");
   background-repeat: no-repeat;
-  background-position: 20px 10px;
+  background-position: 0px 10px;
   font-weight: normal;
   overflow: visible;
   vertical-align: top;
-  padding: 12px 20px 12px 50px;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .mail::-webkit-input-placeholder {
   background-image: url("../assets/img/mail.svg");
   background-repeat: no-repeat;
-  background-position: 20px 10px;
+  background-position: 0px 10px;
   font-weight: normal;
   overflow: visible;
   vertical-align: top;
-  padding: 12px 20px 12px 50px;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .password::-webkit-input-placeholder {
   background-image: url("../assets/img/password.svg");
   background-repeat: no-repeat;
-  background-position: 20px 10px;
+  background-position: 0px 10px;
   font-weight: normal;
   overflow: visible;
   vertical-align: top;
-  padding: 12px 20px 12px 50px;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .confirm::-webkit-input-placeholder {
   background-image: url("../assets/img/confirm.svg");
   background-repeat: no-repeat;
-  background-position: 20px 10px;
+  background-position: 2px 10px;
   font-weight: normal;
   overflow: visible;
   vertical-align: top;
-  padding: 12px 20px 12px 50px;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 
