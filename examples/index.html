@@ -103,9 +103,22 @@
 
             // HTML elements
             const chatHistory = document.querySelector('.chat-history');
-
+           
             // NAF subscription
             NAF.connection.subscribeToDataChannel('chat', (senderId, dataType, data, targetId) => {
+
+
+
+
+
+
+//               let userList = []
+
+// userList.push(data)
+
+// console.log(userList)
+
+
               console.log('msg', data, 'from', senderId);
 
               // Create new elements
@@ -123,6 +136,8 @@
               messageDiv.style.fontSize = '15px';
               messageDiv.style.fontWeight = '400';
               messageDiv.textContent = data.username;
+
+
 
               const chat1Div = document.createElement('div');
               chat1Div.className = 'chat1';
@@ -182,6 +197,9 @@
             // Event listener
             btn.addEventListener('submit', (evt) => {
               evt.preventDefault();
+
+
+      
               const chatHistoryGrp = document.createElement('div');
               chatHistoryGrp.className = 'chat-history-grp';
 
@@ -868,6 +886,7 @@
     debug: true;
     adapter: easyrtc;
     audio: true;
+    video : true
   
   "
       loading-screen="dotsColor: red; backgroundColor: black"
@@ -914,6 +933,20 @@ physicallyCorrectLights : true;
               networked-video-source="streamName: screen"
               visible="false"
             ></a-plane>
+
+            <a-plane
+            id="camshare"
+            color="#FFF"
+            width="0.25"
+            height="0.125"
+            position="-0.2 0 -0.001"
+            material="side: front; color:#FFF; shader: flat"
+            rotation="0 -180 0"
+            networked-video-source
+            visible="true"
+            >
+
+            </a-plane>
           </a-entity>
         </template>
 
@@ -1278,12 +1311,12 @@ physicallyCorrectLights : true;
         <img class="abcd7" src="./assets/img/Chat_alt_3_light.svg" class="chaticon" alt="" width="24px" />
         <span class="tooltiptext">Chat</span>
       </button>
-      <button id="share-btn" type="button" class="button tooltip cameraicon">
-        <img src="./assets/img/camera-108.svg" class="cameraicon1" alt="" width="24px" />
+      <button id="share-btn"  type="button" class="button tooltip cameraicon">
+        <img src="./assets/img/camera-109.svg" class="cameraicon1" alt="" width="24px" />
         <span class="tooltiptext">Enable Camera</span>
       </button>
       <button id="mic-btn" type="button" class="button tooltip micicon">
-        <img src="./assets/img/mic-1.svg" alt="" class="micicon1" width="24px" />
+        <img src="./assets/img/mic-2.svg" alt="" class="micicon1" width="24px" />
         <span class="tooltiptext">Mic</span>
       </button>
       <button id="controls-btn" type="button" class="button tooltip settingicon">
@@ -1320,6 +1353,22 @@ physicallyCorrectLights : true;
         const screenPlane = document.getElementById('screen-share');
         const screenBtnEle = document.getElementById('screen-btn');
         const screenshare = document.getElementById('share-btn');
+
+
+
+
+        let cameraEnabled = true;
+      // Camera button element
+      // const screenshare = document.querySelector('.cam-share');
+
+
+
+      screenshare.addEventListener('click', function () {
+          NAF.connection.adapter.enableCamera(!cameraEnabled);
+          cameraEnabled = !cameraEnabled;
+          // cameraBtnEle.textContent = cameraEnabled ? 'Hide Camera' : 'Show Camera';
+        });
+
 
         console.log(screenPlane);
 
@@ -1458,24 +1507,24 @@ physicallyCorrectLights : true;
       cameraicon.addEventListener('click', function () {
         if (!isChecked4) {
           // First click on the checkbox
-          cameraicon1.src = './assets/img/camera-109.svg';
+          cameraicon1.src = './assets/img/camera-108.svg';
           cameraicon.style.background = 'rgba(255,255,255,0.3)';
           isChecked4 = true;
         } else {
           // Second click on the checkbox
-          cameraicon1.src = './assets/img/camera-108.svg';
+          cameraicon1.src = './assets/img/camera-109.svg';
           cameraicon.style.background = 'rgba(0,0,0,0)';
           isChecked4 = false;
         }
       });
       micicon.addEventListener('click', function () {
         if (!isChecked5) {
-          micicon1.src = './assets/img/mic-2.svg';
+          micicon1.src = './assets/img/mic-1.svg';
           micicon.style.background = 'rgba(255,255,255,0.3)';
           isChecked5 = true;
         } else {
           // Second click on the checkbox35px
-          micicon1.src = './assets/img/mic-1.svg';
+          micicon1.src = './assets/img/mic-2.svg';
           micicon.style.background = 'rgba(0,0,0,0)';
           isChecked5 = false;
         }
