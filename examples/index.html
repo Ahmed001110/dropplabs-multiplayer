@@ -380,30 +380,139 @@
         },
       });
 
-      AFRAME.registerComponent("screen-logic", {
-        init: function () {
-          const el = this.el;
 
-          var checkbox = document.getElementById("share-btn");
-          console.log(checkbox);
 
-          var isChecked = false; // Variable to track checkbox state
 
-          checkbox.addEventListener("click", function () {
-            if (!isChecked) {
-              // First click on the checkbox
-              // checkbox.style.background = 'white';
-              isChecked = true;
-              el.setAttribute("visible", "true");
-            } else {
-              // Second click on the checkbox
-              // checkbox.style.background = 'rgba(0,0,0,0.6)';
-              isChecked = false;
-              el.setAttribute("visible", "false");
-            }
-          });
-        },
-      });
+
+
+AFRAME.registerComponent('networked-video-sourcenew', {
+  schema: {
+    streamName: { default: 'video' }
+  },
+
+
+  dependencies: ['material'],
+
+  init: function () {
+
+
+    const mesh = this.el.getObject3D('mesh');
+ 
+        mesh.visible = false
+
+
+    this.videoTexture = null;
+    this.video = null;
+    this.stream = null;
+
+    this._setMediaStream = this._setMediaStream.bind(this);
+    this._waitForMediaStream = this._waitForMediaStream.bind(this);
+    this._waitForMediaStream();
+  },
+
+  _waitForMediaStream() {
+    NAF.utils.getNetworkedEntity(this.el).then((networkedEl) => {
+      const ownerId = networkedEl.components.networked.data.owner;
+
+      if (ownerId) {
+        NAF.connection.adapter
+          .getMediaStream(ownerId, this.data.streamName)
+          .then(this._setMediaStream)
+          .catch((e) => naf.log.error(`Error getting media stream for ${ownerId}`, e));
+      } else {
+        // Correctly configured local entity, perhaps do something here for enabling debug audio loopback
+      }
+    });
+  },
+
+  _setMediaStream(newStream) {
+    if (!this.video) {
+      this.setupVideo();
+    }
+
+    if (newStream !== this.stream) {
+      if (this.stream) {
+        this._clearMediaStream();
+      }
+
+      if (newStream) {
+        this.video.srcObject = newStream;
+
+        const playResult = this.video.play();
+        if (playResult instanceof Promise) {
+          playResult.catch((e) => naf.log.error(`Error play video stream`, e));
+        }
+
+        if (this.videoTexture) {
+          this.videoTexture.dispose();
+        }
+
+        this.videoTexture = new THREE.VideoTexture(this.video);
+
+        const mesh = this.el.getObject3D('mesh');
+        mesh.material.map = this.videoTexture;
+        mesh.material.needsUpdate = true;
+        mesh.visible = true
+
+        // Listen for the 'removetrack' event on the MediaStream
+        // that is emitted when the remote screen sharing stops.
+        newStream.addEventListener('removetrack', () => {
+          this._clearMediaStream();
+          this._waitForMediaStream();
+
+         
+        });
+      }
+
+      this.stream = newStream;
+    }
+  },
+
+  _clearMediaStream() {
+    this.stream = null;
+
+    if (this.videoTexture) {
+      if (this.videoTexture.image instanceof HTMLVideoElement) {
+        // Note: this.videoTexture.image === this.video
+        const video = this.videoTexture.image;
+        video.pause();
+        video.srcObject = null;
+        video.load();
+      }
+
+      this.videoTexture.dispose();
+      this.videoTexture = null;
+      const mesh = this.el.getObject3D('mesh');
+      mesh.material.map = null;
+     mesh.visible = false
+      mesh.material.needsUpdate = true;
+    }
+  },
+
+  remove: function () {
+    this._clearMediaStream();
+  },
+
+  setupVideo: function () {
+    if (!this.video) {
+      const video = document.createElement('video');
+      video.setAttribute('autoplay', true);
+      video.setAttribute('playsinline', true);
+      video.setAttribute('muted', true);
+      this.video = video;
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
     </script>
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
@@ -1173,8 +1282,8 @@ physicallyCorrectLights : true;
               position="0.7 0 -0.001"
               material="side: front; color:#FFF; shader: flat"
               rotation="0 -180 0"
-              networked-video-source="streamName: screen"
-              visible="false"
+              networked-video-sourcenew="streamName: screen"
+              
             ></a-plane>
 
             <a-plane

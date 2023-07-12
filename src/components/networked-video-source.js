@@ -60,12 +60,15 @@ AFRAME.registerComponent('networked-video-source', {
         const mesh = this.el.getObject3D('mesh');
         mesh.material.map = this.videoTexture;
         mesh.material.needsUpdate = true;
+        mesh.visible = true
 
         // Listen for the 'removetrack' event on the MediaStream
         // that is emitted when the remote screen sharing stops.
         newStream.addEventListener('removetrack', () => {
           this._clearMediaStream();
           this._waitForMediaStream();
+
+         
         });
       }
 
@@ -89,6 +92,7 @@ AFRAME.registerComponent('networked-video-source', {
       this.videoTexture = null;
       const mesh = this.el.getObject3D('mesh');
       mesh.material.map = null;
+     
       mesh.material.needsUpdate = true;
     }
   },
