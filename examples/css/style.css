@@ -232,6 +232,7 @@ top: 33px !important;
   margin-left: 30px;
   margin-bottom: 10px;
   border-bottom-left-radius: 0;
+  position: relative;
 }
 .chat-history-parent::before {
   content: "";
@@ -259,7 +260,7 @@ top: 33px !important;
 }
 
 .chat-history-parent1 {
-  /* position: absolute; */
+  position: relative;
   color: #fff;
   right: 30px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -274,10 +275,10 @@ top: 33px !important;
 }
 .chat-history-parent1::after {
   content: "";
+  position: absolute;
   width: 20px;
   height: 20px;
   display: block;
-  position: absolute;
   right: -20px;
   background-color: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -1340,41 +1341,144 @@ input {
 .user::-webkit-input-placeholder {
   background-image: url("../assets/img/user.svg");
   background-repeat: no-repeat;
-  background-position: 0px 10px;
   font-weight: normal;
-  overflow: visible;
-  vertical-align: top;
-  padding: 12px 20px 12px 30px;
+  text-indent: 25px;
+  font-size: larger;
   color: rgb(255, 255, 255, 0.6);
 }
+
+.user::-moz-placeholder {
+  background-image: url("../assets/img/user.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.user:-ms-input-placeholder {
+  background-image: url("../assets/img/user.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.user::placeholder {
+  background-image: url("../assets/img/user.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
 .mail::-webkit-input-placeholder {
   background-image: url("../assets/img/mail.svg");
   background-repeat: no-repeat;
-  background-position: 0px 10px;
   font-weight: normal;
-  overflow: visible;
-  vertical-align: top;
-  padding: 12px 20px 12px 30px;
+  text-indent: 25px;
+  font-size: larger;
   color: rgb(255, 255, 255, 0.6);
 }
+
+.mail::-moz-placeholder {
+  background-image: url("../assets/img/mail.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.mail:-ms-input-placeholder {
+  background-image: url("../assets/img/mail.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.mail::placeholder {
+  background-image: url("../assets/img/mail.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
 .password::-webkit-input-placeholder {
   background-image: url("../assets/img/password.svg");
   background-repeat: no-repeat;
-  background-position: 0px 10px;
   font-weight: normal;
-  overflow: visible;
-  vertical-align: top;
-  padding: 12px 20px 12px 30px;
+  text-indent: 25px;
+  font-size: larger;
   color: rgb(255, 255, 255, 0.6);
 }
+
+.password::-moz-placeholder {
+  background-image: url("../assets/img/password.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.password:-ms-input-placeholder {
+  background-image: url("../assets/img/password.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.password::placeholder {
+  background-image: url("../assets/img/password.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
 .confirm::-webkit-input-placeholder {
   background-image: url("../assets/img/confirm.svg");
   background-repeat: no-repeat;
-  background-position: 2px 10px;
   font-weight: normal;
-  overflow: visible;
-  vertical-align: top;
-  padding: 12px 20px 12px 30px;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.confirm::-moz-placeholder {
+  background-image: url("../assets/img/confirm.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.confirm:-ms-input-placeholder {
+  background-image: url("../assets/img/confirm.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
+  color: rgb(255, 255, 255, 0.6);
+}
+
+.confirm::placeholder {
+  background-image: url("../assets/img/confirm.svg");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  text-indent: 25px;
+  font-size: larger;
   color: rgb(255, 255, 255, 0.6);
 }
 
