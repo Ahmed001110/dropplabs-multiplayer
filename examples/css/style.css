@@ -1340,37 +1340,42 @@ input {
 .user::-webkit-input-placeholder {
   background-image: url("../assets/img/user.svg");
   background-repeat: no-repeat;
+  background-position: 0px 10px;
   font-weight: normal;
-  text-indent: 25px;
-  font-size: larger;
+  overflow: visible;
+  vertical-align: top;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .mail::-webkit-input-placeholder {
   background-image: url("../assets/img/mail.svg");
   background-repeat: no-repeat;
+  background-position: 0px 10px;
   font-weight: normal;
-  text-indent: 25px;
-  font-size: larger;
+  overflow: visible;
+  vertical-align: top;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .password::-webkit-input-placeholder {
   background-image: url("../assets/img/password.svg");
   background-repeat: no-repeat;
+  background-position: 0px 10px;
   font-weight: normal;
-  text-indent: 25px;
-  font-size: larger;
+  overflow: visible;
+  vertical-align: top;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
 }
 .confirm::-webkit-input-placeholder {
   background-image: url("../assets/img/confirm.svg");
   background-repeat: no-repeat;
+  background-position: 2px 10px;
   font-weight: normal;
-  text-indent: 25px;
-  font-size: larger;
+  overflow: visible;
+  vertical-align: top;
+  padding: 12px 20px 12px 30px;
   color: rgb(255, 255, 255, 0.6);
-  /* background-position: 0px -5px; */
-  /* vertical-align: top; */
-  /* padding: 12px 20px 12px 30px; */
 }
 
 .abcd4 {
