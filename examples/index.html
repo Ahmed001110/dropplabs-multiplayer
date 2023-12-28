@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <!-- ******** NEW AFRAME-EXTRAS VERSION FOR A-FRAME v1.0.4 ******** -->
     <!-- <s?cript src="js/progressive-controls.js"></script> -->
     <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
@@ -102,7 +102,7 @@
             const username = document.querySelector("#user-name");
             const log = document.querySelector("#user-message");
             const planeValue = document.querySelector("a-text.nametag");
-            console.log(planeValue);
+      
             const sendbtn = document.getElementById("submit");
 
             function scrollChatToBottom() {
@@ -119,11 +119,6 @@
               (senderId, dataType, data, targetId) => {
                 //               let userList = []
 
-                // userList.push(data)
-
-                // console.log(userList)
-
-                console.log("msg", data, "from", senderId);
 
                 // Create new elements
                 const chatHistoryGrp = document.createElement("div");
@@ -505,133 +500,6 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
   <body>
-    <!-- <div id="chatUI">
-      <input type="text">
-      <button id="btn">
-        SEND
-      </button>
-      <div id="messages">
-        
-      </div>
-    </div>
- -->
-    <!-- <div class="user-group">
-      <div class="user_grp">
-        <div class="user1" style="background-color: #6bff5f">
-          <div class="username1" style="color: #6bff5f">D</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="user_grp">
-        <div class="user1" style="background-color: #ffb21d">
-          <div class="username1" style="color: #ffb21d">C</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="user_grp">
-        <div class="user1" style="background-color: #a19487">
-          <div class="username1" style="color: #a19487">A</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="cam-group">
-      <div class="cam_grp">
-        <div
-          class="cam-user1"
-          style="background-image: url(./assets/img/avatar1.svg)"
-        >
-          <div class="cam-username1">Austrin</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="cam-user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="cam-user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="cam_grp">
-        <div
-          class="cam-user1"
-          style="background-image: url(./assets/img/avatar2.svg)"
-        >
-          <div class="cam-username1">Smith M.</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="cam-user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="cam-user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="cam_grp">
-        <div
-          class="cam-user1"
-          style="background-image: url(./assets/img/avatar3.svg)"
-        >
-          <div class="cam-username1">John Smith</div>
-          <img
-            src="./assets/img/cam1.svg"
-            width="20px"
-            class="cam-user_image1"
-            alt=""
-          />
-          <img
-            src="./assets/img/mic1.svg"
-            width="20px"
-            class="cam-user_image2"
-            alt=""
-          />
-        </div>
-      </div>
-    </div> -->
-
     <div id="live-chat" class="abc1 abcd8">
       <div class="chat" id="abcd1">
         <div class="chat-history"></div>
@@ -651,6 +519,7 @@
           <form id="form" action="">
             <fieldset id="inp">
               <input
+                autocomplete="off"
                 id="ourInput"
                 type="text"
                 placeholder="Write Message"
@@ -669,27 +538,6 @@
       </div>
       <!-- end chat -->
     </div>
-
-    <!-- <button
-      id="color-changer"
-      style="z-index: 100; bottom: 24px; left: 24px; position: fixed"
-      onclick="let newColor = window.ntExample.randomColor();
-           document.getElementById('player').setAttribute('player-info', 'color', newColor); 
-           document.querySelector('button').style.backgroundColor = newColor;
-           document.querySelector('button').style.color = newColor;
-  "
-    >
-      ■
-    </button> -->
-    <!-- <div class="display-name">
-      <h3>Display Name</h3>
-      <input
-        id="username-overlay"
-        placeholder="Write Your Name"
-        oninput="document.getElementById('player').setAttribute('player-info', 'name', this.value)"
-      />
-      <div class="btn">Done</div>
-    </div> -->
 
     <div class="preloader">
       <p>Loading Experience...</p>
@@ -1862,7 +1710,6 @@ physicallyCorrectLights : true;
           // cameraBtnEle.textContent = cameraEnabled ? 'Hide Camera' : 'Show Camera';
         });
 
-        console.log(screenPlane);
 
         // On mobile remove elements that are resource heavy
         const isMobile = AFRAME.utils.device.isMobile();
@@ -1955,8 +1802,6 @@ physicallyCorrectLights : true;
 
       const chat_box = document.getElementById("live-chat");
       // const user_box = document.querySelector('.user-group');
-
-      console.log(chaticon, chat_box);
       var isChecked1 = false; // Variable to track checkbox state
       var isChecked2 = false;
       var isChecked3 = false;
@@ -2027,7 +1872,7 @@ physicallyCorrectLights : true;
           // First click on the checkbox
           settingicon.style.background = "rgba(255,255,255,0.3)";
           if (window.innerWidth > 768) {
-            console.log("<<<1");
+         
             introMobile.style.visibility = "hidden";
             const temp1 = document.querySelector(".continue_desktop_btn");
             temp1.style.visibility = "hidden";
@@ -2035,7 +1880,7 @@ physicallyCorrectLights : true;
             introDesktopWrapper.classList.add("step-1");
             showIntro();
           } else {
-            console.log(",,,2");
+          
             intro.style.visibility = "hidden";
             screenBtnEle.style.display = "none";
             menuBtn.style.display = "none";

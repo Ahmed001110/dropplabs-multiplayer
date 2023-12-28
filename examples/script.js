@@ -32,7 +32,6 @@ const signup1_desktop = document.querySelector(".signup1_desktop");
 const signin1_desktop = document.querySelector(".signin1_desktop");
 const chat_box1 = document.getElementById("live-chat");
 
-console.log(menuBtn);
 if (false) {
   hideIntro();
   intro.style.visibility = "hidden";
@@ -182,14 +181,14 @@ document.addEventListener("click", function (e) {
     }
   }
 });
-document.querySelector("#start-btn").addEventListener("click", function () {
-  hideIntro();
-  document.querySelector(".guide_completed").classList.add("active");
-  setTimeout(() => {
-    document.querySelector(".guide_completed").classList.remove("active");
-  }, 1500);
-  localStorage.setItem("intro", "true");
-});
+// document.querySelector("#start-btn").addEventListener("click", function () {
+//   hideIntro();
+//   document.querySelector(".guide_completed").classList.add("active");
+//   setTimeout(() => {
+//     document.querySelector(".guide_completed").classList.remove("active");
+//   }, 1500);
+//   localStorage.setItem("intro", "true");
+// });
 
 function showIntro() {
   if (scene.hasLoaded) {
@@ -241,20 +240,19 @@ continueDesktopBtn.addEventListener("click", () => {
 
 let rotate = 0;
 var chatclose = document.querySelector(".chat-close");
-console.log(chatclose);
 
 var isChecked3 = false; // Variable to track checkbox state
 
-chatclose.addEventListener("click", function () {
-  if (!isChecked3) {
-    // First click on the checkbox
-    rotation = 135;
-    chatclose.style.transform = ` rotate(${rotation}deg)`;
-    isChecked3 = true;
-  } else {
-    // Second click on the checkbox
-    rotation = -45;
-    chatclose.style.transform = ` rotate(${rotation}deg)`;
-    isChecked3 = false;
-  }
-});
+// chatclose.addEventListener("click", function () {
+//   if (!isChecked3) {
+//     // First click on the checkbox
+//     rotation = 135;
+//     chatclose.style.transform = ` rotate(${rotation}deg)`;
+//     isChecked3 = true;
+//   } else {
+//     // Second click on the checkbox
+//     rotation = -45;
+//     chatclose.style.transform = ` rotate(${rotation}deg)`;
+//     isChecked3 = false;
+//   }
+// });
